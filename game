@@ -90,6 +90,46 @@ def Intersect(x1, x2,  y1,  y2,  db1,  db2):
                 window.blit(screen, (0, 0))
                 pygame.display.flip()
 
+                Blocks_WIDTH = 32
+                Blocks_HEIGHT = 32
+                Blocks_COLOR = "#000000"
+
+                level = [
+       "---------------------------------",
+       "-                               -",
+       "-                               -",
+       "-                               -",
+       "-                               -",
+       "-                               -",
+       "--                              -",
+       "-                               -",
+       "-                               -",
+       "-                               -",
+       "-    -----------------------    -",
+       "-                               -",
+       "-                               -",
+       "                                -",
+       "-                               -",
+       "-                               -",
+       "-                               -",
+       "-                               -",
+       "-                               -",
+       "---------------------------------"]
+
+       x=y=0 
+  for row in level: 
+      for col in row: 
+          if col == "-":
+              
+              pf = Surface((Blocks_WIDTH,Blocks_HEIGHT))
+              pf.fill(Color(Blocks_COLOR)) 
+              screen.blit(pf,(x,y))
+                    
+          x += Blocks_WIDTH 
+      y += Blocks_HEIGHT    
+      x = 0                   
+
+
     pygame.font.init()
     speed_font = pygame.font.Font(None, 32)
     inf_font = pygame.font.Font('Comic Sans MS', 24, True )
@@ -175,3 +215,4 @@ def Intersect(x1, x2,  y1,  y2,  db1,  db2):
     window.render(0, 30)
     pygame.display.flip()
     """Спасибо за просмотор и да разработчик спрятался поэтому я прощаюсь.Простите за ошибки в коде и тексте.Пока"""
+
